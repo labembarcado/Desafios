@@ -1,3 +1,6 @@
+
+void led_temp(int pin, int time);
+
 void setup() {
   // put your setup code here, to run once:
   pinMode(8, OUTPUT);
@@ -7,16 +10,15 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  digitalWrite(8, HIGH);
-  delay(30000);
-  digitalWrite(8, LOW);
-
-  digitalWrite(9, HIGH);
-  delay(5000);
-  digitalWrite(9, LOW);
-
-  digitalWrite(10, HIGH);
-  delay(15000);
-  digitalWrite(10, LOW);    
-
+  led_temp(8, 30000);
+  led_temp(9, 5000);
+  led_temp(10,15000);
 }
+
+void led_temp(int pin, int time)
+{
+  digitalWrite(pin, HIGH);
+  delay(time);
+  digitalWrite(pin, LOW);
+}
+
